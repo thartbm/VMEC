@@ -15,8 +15,8 @@ load(configfilename);
 forbiddenChars = {'_',' '};
 
 for fbcn = 1:numel(forbiddenChars)
-    cfg.subject_id(strfind(cfg.subject_id),forbiddenChars{fbcn}) = '';
-    cfg.TaskName(strfind(cfg.TaskName),forbiddenChars{fbcn}) = '';
+    cfg.subject_id(strfind(cfg.subject_id,forbiddenChars{fbcn})) = '';
+    cfg.TaskName(strfind(cfg.TaskName,forbiddenChars{fbcn})) = '';
 end;
 
 %% set up file and directory names
