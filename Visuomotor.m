@@ -270,7 +270,7 @@ global Select_List
 global loader
 global fileload
 
-if loader == 1;
+if loader == 1
     load(sprintf('%s%s',cfg.taskdir,Select_List(1:end-4)));
     fileload = 1;
     set(handles.Task_Name_Text, 'String', cfg.TaskName);

@@ -91,13 +91,15 @@ if editor == 1;
     end
     if NumTarg == 1
         TrialCounter = 3;
+        pop_trial_index = 
     elseif NumTarg == 2 
         TrialCounter = 4;
     else 
         TrialCounter = NumTarg;
+        pop_trial_index = 1 + cfg.total_trials/NumTarg;
     end
     set(handles.Total_trial_popmenu, 'String', 0:TrialCounter:200); 
-    set(handles.Total_trial_popmenu, 'Value',  1 + cfg.total_trials/TrialCounter);
+    set(handles.Total_trial_popmenu, 'Value', pop_trial_index);
     set(handles.Max_range_popmenu, 'Value', ((cfg.max_angle - 35)/5));
     set(handles.Min_range_popmenu, 'Value', ((cfg.min_angle - 35)/5));
     set(handles.Targ_dist_popmenu, 'Value', round((cfg.target{1,1}.targ_dist - 0.4) * 10));
